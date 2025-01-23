@@ -6,7 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 const font = DM_Sans({
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "AutomizeX",
@@ -20,19 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${font}  antialiased`}
-      >
-
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-
+      <body className={`${font}  antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
