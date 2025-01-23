@@ -1,13 +1,11 @@
-import React from 'react'
-import { db } from '@/lib/db'
-import ProfilePicture from '@/components/Settings/ProfilePicture'
-import ProfileForm from '@/components/Forms/profile-form'
-const currentUser = 'currents'
-type Props = {}
+import React from "react";
+import { db } from "@/lib/db";
+import ProfilePicture from "@/components/Settings/ProfilePicture";
+import ProfileForm from "@/components/Forms/profile-form";
+const currentUser = "currents";
+type Props = {};
 
 const Settings = async (props: Props) => {
- 
-
   return (
     <div className="flex flex-col gap-4">
       <h1 className="sticky top-0 z-[10] flex items-center justify-between border-b bg-background/50 p-6 text-4xl backdrop-blur-lg">
@@ -22,16 +20,13 @@ const Settings = async (props: Props) => {
         </div>
         <ProfilePicture
           onDelete={removeProfileImage}
-          userImage={user?.profileImage || ''}
+          userImage={user?.profileImage || ""}
           onUpload={uploadProfileImage}
         />
-        <ProfileForm
-          user={user}
-          onUpdate={updateUserInfo}
-        />
+        <ProfileForm user={user} onUpdate={updateUserInfo} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Settings
+export default Settings;
